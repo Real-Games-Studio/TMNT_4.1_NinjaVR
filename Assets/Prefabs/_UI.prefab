@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 665438367987554245}
   - component: {fileID: 665438367987554242}
   - component: {fileID: 665438367987554243}
-  - component: {fileID: 665438367987554244}
   m_Layer: 0
   m_Name: RestartLevelButton
   m_TagString: Untagged
@@ -123,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 665438367987554244}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RestartScene, Assembly-CSharp
         m_MethodName: RestartThisScene
         m_Mode: 3
@@ -135,18 +134,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &665438367987554244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438367987554241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce62ac70d8d15c54e8dc4b7b93e5a0e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &665438368045727906
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +145,6 @@ GameObject:
   - component: {fileID: 665438368045727910}
   - component: {fileID: 665438368045727911}
   - component: {fileID: 665438368045727908}
-  - component: {fileID: 665438368045727909}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -284,21 +270,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &665438368045727909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368045727906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad0599dde409f84a8031cf155e229e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 665438368045727908}
-  scoreFadeTime: 3
-  length: 7
 --- !u!1 &665438368248008262
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,9 +380,6 @@ GameObject:
   - component: {fileID: 665438368290899214}
   - component: {fileID: 665438368290899215}
   - component: {fileID: 665438368290899317}
-  - component: {fileID: 665438368290899314}
-  - component: {fileID: 665438368290899319}
-  - component: {fileID: 665438368290899316}
   m_Layer: 0
   m_Name: GameOverPopup
   m_TagString: Untagged
@@ -532,107 +500,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &665438368290899314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368290899212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88dcf25cb49c7648b23e17f69accd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cg: {fileID: 665438368290899317}
-  fadeTime: 1
-  fadeEase: 21
-  onShow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368045727909}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ShowScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHide:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368045727909}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ResetValues
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438368290899319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368290899212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 620f7aac602ad78418fb6c1ca0a6670a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368290899314}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438368290899316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368290899212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d380386b903340c43b4c298a34562dd5, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368290899314}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &665438368310211840
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +822,6 @@ GameObject:
   - component: {fileID: 665438368586523791}
   - component: {fileID: 665438368586523888}
   - component: {fileID: 665438368586523889}
-  - component: {fileID: 665438368586523790}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -1081,21 +947,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &665438368586523790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368586523788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad0599dde409f84a8031cf155e229e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 665438368586523889}
-  scoreFadeTime: 3
-  length: 7
 --- !u!1 &665438368673812769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1094,6 @@ GameObject:
   - component: {fileID: 665438368713882200}
   - component: {fileID: 665438368713882201}
   - component: {fileID: 665438368713882198}
-  - component: {fileID: 665438368713882203}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -1354,7 +1204,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 665438368713882203}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RestartScene, Assembly-CSharp
         m_MethodName: RestartThisScene
         m_Mode: 3
@@ -1366,18 +1216,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &665438368713882203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368713882196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce62ac70d8d15c54e8dc4b7b93e5a0e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &665438368889689575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1363,6 @@ GameObject:
   - component: {fileID: 665438368957252206}
   - component: {fileID: 665438368957252207}
   - component: {fileID: 665438368957252204}
-  - component: {fileID: 665438368957252177}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -1636,20 +1473,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &665438368957252177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438368957252202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 504eaffe3c185bf469313a589c4026d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 665438368957252204}
-  sceneName: Menu
 --- !u!1 &665438368966911741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,14 +1647,7 @@ GameObject:
   - component: {fileID: 665438369279390257}
   - component: {fileID: 665438369279390414}
   - component: {fileID: 665438369279390415}
-  - component: {fileID: 665438369279390259}
-  - component: {fileID: 665438369279390258}
   - component: {fileID: 665438369279390261}
-  - component: {fileID: 665438369279390260}
-  - component: {fileID: 665438369279390263}
-  - component: {fileID: 665438369279390262}
-  - component: {fileID: 665438369279390264}
-  - component: {fileID: 665438369279390265}
   m_Layer: 5
   m_Name: ScoreCanvas
   m_TagString: Untagged
@@ -1924,38 +1740,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &665438369279390259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5904815dd86264b9f5dbb4cb4853a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiplierLabel: {fileID: 665438368470625397}
-  scoreLabel: {fileID: 665438368248008264}
-  multiplierLoader: {fileID: 665438369733072531}
-  scoreFollowTime: 1
-  canvasGroup: {fileID: 665438369279390261}
-  onGameOver: {fileID: 11400000, guid: 620f7aac602ad78418fb6c1ca0a6670a, type: 2}
---- !u!114 &665438369279390258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b4a304d65e2bcc429c6745ee405791e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: -1
-  overrideLookAt: {fileID: 0}
 --- !u!225 &665438369279390261
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1968,158 +1752,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &665438369279390260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d59348dca6b9d334abcf862e7028cf9a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnCorrectSlice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369279390263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 54cde7514b2f1d0478f67ebbb7ae9095, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnIncorrectSlice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369279390262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 64c69597d841fe943a9208e76c0b6361, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnIncorrectSlice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369279390264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 620f7aac602ad78418fb6c1ca0a6670a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnGameOver
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369279390265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369279390412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d380386b903340c43b4c298a34562dd5, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ResetThisComponent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 665438369279390259}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnGameRestart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &665438369312548018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,9 +1766,6 @@ GameObject:
   - component: {fileID: 665438369312548025}
   - component: {fileID: 665438369312548022}
   - component: {fileID: 665438369312548023}
-  - component: {fileID: 665438369312548020}
-  - component: {fileID: 665438369312548029}
-  - component: {fileID: 665438369312548026}
   m_Layer: 0
   m_Name: LevelCompletePopup
   m_TagString: Untagged
@@ -2257,107 +1886,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &665438369312548020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369312548018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88dcf25cb49c7648b23e17f69accd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cg: {fileID: 665438369312548023}
-  fadeTime: 1
-  fadeEase: 21
-  onShow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368586523790}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ShowScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHide:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438368586523790}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ResetValues
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369312548029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369312548018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: ce58de5ddbd64804ba835a5141576a7d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369312548020}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &665438369312548026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369312548018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a74d5da5724d2849bfd4e6403f45305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d380386b903340c43b4c298a34562dd5, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665438369312548020}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &665438369405083397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +2570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a04fb96f3a0f894db19a4b14b759237, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dc8b5573bc913b458e30e2cb6dbe5dd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3079,7 +2607,6 @@ GameObject:
   - component: {fileID: 665438369945958009}
   - component: {fileID: 665438369945958006}
   - component: {fileID: 665438369945958007}
-  - component: {fileID: 665438369945958008}
   m_Layer: 0
   m_Name: RestartLevelButton
   m_TagString: Untagged
@@ -3190,16 +2717,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &665438369945958008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665438369945958005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d2822e351e1a444ba7a33af6314372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onRestart: {fileID: 11400000, guid: d380386b903340c43b4c298a34562dd5, type: 2}

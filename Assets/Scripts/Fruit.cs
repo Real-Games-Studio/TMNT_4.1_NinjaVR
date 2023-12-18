@@ -8,6 +8,7 @@ public class Fruit : MonoBehaviour
     private bool test;
     private Rigidbody _fruitRb = null;
     public bool IsTrainingFruit { get => _isTrainingFruit; set => _isTrainingFruit = value; }
+    public Material InsideMaterial { get => _insideMaterial; set => _insideMaterial = value; }
 
     private void Awake()
     {
@@ -27,11 +28,11 @@ public class Fruit : MonoBehaviour
     {
         Vector3 planeNormal = Vector3.Cross(_endSlicePoint.position - _startSlicePoint.position, _velocityEstimator.GetVelocityEstimate()).normalized;
         SlicedHull hull = target.Slice(_endSlicePoint.position, planeNormal);
-        
+
         if (hull != null)
         {
-            GameObject upperHull = hull.CreateUpperHull(target, _insideMaterial);
-            GameObject lowerHull = hull.CreateLowerHull(target, _insideMaterial);
+            GameObject upperHull = hull.CreateUpperHull(target, InsideMaterial);
+            GameObject lowerHull = hull.CreateLowerHull(target, InsideMaterial);
             SetupSliceComponent(upperHull, _startSlicePoint.position, true);
             SetupSliceComponent(lowerHull, _startSlicePoint.position, false);
 
