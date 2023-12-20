@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253160343230020742}
+  - component: {fileID: 3131834481102042737}
   m_Layer: 0
   m_Name: EndPoint
   m_TagString: Untagged
@@ -62,6 +63,21 @@ Transform:
   m_Father: {fileID: 8712322604492010881}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3131834481102042737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023426391416698702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98b561cd2b83349b1e41fbe6b4630e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 1
 --- !u!1 &8712322603851537161
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startSlicePoint: {fileID: 3210849589047736985}
   _endSlicePoint: {fileID: 253160343230020742}
-  _velocityEstimator: {fileID: 0}
+  _velocityEstimator: {fileID: 3131834481102042737}
   _sliceableLayer:
     serializedVersion: 2
     m_Bits: 256

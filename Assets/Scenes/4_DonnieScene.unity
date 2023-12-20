@@ -385,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 5520773579977947901, guid: 5aee998ed630f9c4088005a04cdb7241,
         type: 3}
       propertyPath: m_TagString
-      value: Burst
+      value: Cuttable
       objectReference: {fileID: 0}
     - target: {fileID: 8391945338411950322, guid: 5aee998ed630f9c4088005a04cdb7241,
         type: 3}
@@ -405,6 +405,12 @@ PrefabInstance:
     - {fileID: 1564822413963053348, guid: 5aee998ed630f9c4088005a04cdb7241, type: 3}
     - {fileID: 1564822413963053351, guid: 5aee998ed630f9c4088005a04cdb7241, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5aee998ed630f9c4088005a04cdb7241, type: 3}
+--- !u!1 &258447900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1564822414238735775, guid: 5aee998ed630f9c4088005a04cdb7241,
+    type: 3}
+  m_PrefabInstance: {fileID: 258447899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291573523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1089,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timeTxt
       value: 
-      objectReference: {fileID: 617395323}
+      objectReference: {fileID: 0}
     - target: {fileID: 4318371786956833288, guid: 39e5cc17912a41e4d909a2c942039b24,
         type: 3}
       propertyPath: m_Name
@@ -1128,7 +1134,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _trainingTextHolder
       value: 
-      objectReference: {fileID: 1172884568}
+      objectReference: {fileID: 0}
     - target: {fileID: 8693468547984287915, guid: 39e5cc17912a41e4d909a2c942039b24,
         type: 3}
       propertyPath: player
@@ -2298,18 +2304,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &617395323 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 665438369436031352, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-    type: 3}
-  m_PrefabInstance: {fileID: 930192910}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &681038714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startSlicePoint: {fileID: 940331778}
   _endSlicePoint: {fileID: 1360279279}
-  _velocityEstimator: {fileID: 0}
+  _velocityEstimator: {fileID: 1360279280}
   _sliceableLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2798,12 +2792,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1088962263}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1172884568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7602491887303109072, guid: 39e5cc17912a41e4d909a2c942039b24,
-    type: 3}
-  m_PrefabInstance: {fileID: 321050346}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1247035323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2912,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 258447899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1360279280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258447900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98b561cd2b83349b1e41fbe6b4630e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 1
 --- !u!1 &1469610080
 GameObject:
   m_ObjectHideFlags: 0
