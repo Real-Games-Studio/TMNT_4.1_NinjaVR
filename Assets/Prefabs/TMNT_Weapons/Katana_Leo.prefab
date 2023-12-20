@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 771782071086007790}
   m_Layer: 0
   m_Name: Katana_Leo
-  m_TagString: Untagged
+  m_TagString: Cuttable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,8 +82,6 @@ MonoBehaviour:
   _sliceableLayer:
     serializedVersion: 2
     m_Bits: 256
-  _insideMaterial: {fileID: 2100000, guid: 7801fec021c9e44b5a5162e35501d845, type: 2}
-  _cutForce: 2000
 --- !u!1 &4378836542706199756
 GameObject:
   m_ObjectHideFlags: 0

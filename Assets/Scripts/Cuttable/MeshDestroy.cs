@@ -11,6 +11,7 @@ public class MeshDestroy : MonoBehaviour
     private Plane edgePlane = new Plane();
     private Material _insideMaterial;
     private MeshRenderer _meshRenderer;
+    private Fruit _fruit;
 
     public int CutCascades = 1;
     public float ExplodeForce = 0;
@@ -20,21 +21,29 @@ public class MeshDestroy : MonoBehaviour
     {
         _insideMaterial = GetComponent<Fruit>().InsideMaterial;
         _meshRenderer = GetComponent<MeshRenderer>();
+        _fruit = GetComponent<Fruit>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _meshRenderer.material = _insideMaterial;
-            DestroyMesh();
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+
+        //     DestroyMesh();
+        // }
     }
 
 
-    private void DestroyMesh()
+    public void DestroyMesh()
     {
+        if (_fruit.IsTrainingFruit)
+        {
+            // Manager.Instance.FruitsSpawner.StartSpawn();
+            Manager.Instance.RandomTrainingFruit.DisableText();
+            Manager.Instance.TimeController.StartTimer();
+        }
+
         var originalMesh = GetComponent<MeshFilter>().mesh;
         originalMesh.RecalculateBounds();
         var parts = new List<PartMesh>();
@@ -78,6 +87,7 @@ public class MeshDestroy : MonoBehaviour
             parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
         }
 
+        _meshRenderer.material = _insideMaterial;
         Destroy(gameObject);
     }
 

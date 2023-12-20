@@ -10,22 +10,24 @@ public class FruitsPool : MonoBehaviour
     public Dictionary<string, PoolBase<Transform>> FruitsDictionary { get => _fruitsDictionary; set => _fruitsDictionary = value; }
     public Transform[] Fruits { get => _fruits; set => _fruits = value; }
 
+
     private void Awake()
     {
         for (int i = 0; i < Fruits.Length; i++)
-            _fruitsDictionary.Add($"{i}", new PoolBase<Transform>(Fruits[i], 0, transform));
+            _fruitsDictionary.Add($"{i}", new PoolBase<Transform>(Fruits[i], 1, transform));
     }
     public Transform UsePool(Transform posTransform)
     {
         _randNum = Random.Range(0, Fruits.Length);
         Transform spawnedFruit = FruitsDictionary[$"{_randNum}"].GetObjectFromPool();
         spawnedFruit.transform.position = posTransform.position;
+        spawnedFruit.name += $"{_randNum}";
 
         return spawnedFruit;
     }
-    public void TurnOff(Transform transform)
+    public void TurnOff(Transform fruit)
     {
-        FruitsDictionary[$"{_randNum}"].ObjectOff(transform);
-        Manager.Instance.ParticlesPool.UsePool(transform, _randNum);
+        FruitsDictionary[$"{_randNum}"].ObjectOff(fruit);
+        // Manager.Instance.ParticlesPool.UsePool(transform, _randNum);
     }
 }

@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7676631156255545041}
   m_Layer: 0
   m_Name: TwinSai_Rapha
-  m_TagString: Untagged
+  m_TagString: Cuttable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

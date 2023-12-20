@@ -5,24 +5,9 @@ public class Fruit : MonoBehaviour
 {
     [SerializeField] private Material _insideMaterial;
     [SerializeField] private bool _isTrainingFruit;
-    private bool test;
-    private Rigidbody _fruitRb = null;
+
     public bool IsTrainingFruit { get => _isTrainingFruit; set => _isTrainingFruit = value; }
     public Material InsideMaterial { get => _insideMaterial; set => _insideMaterial = value; }
-
-    private void Awake()
-    {
-        _fruitRb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        if (ShouldKillFruit())
-        {
-            _fruitRb.velocity = Vector3.zero;
-            Manager.Instance.FruitsPool.TurnOff(transform);
-        }
-    }
 
     public void Slice(GameObject target, Transform _endSlicePoint, Transform _startSlicePoint, VelocityEstimator _velocityEstimator)
     {
@@ -39,12 +24,11 @@ public class Fruit : MonoBehaviour
             if (!_isTrainingFruit)
             {
                 Manager.Instance.FruitsPool.TurnOff(transform);
-                _fruitRb.velocity = Vector3.zero;
                 // enabled = false;
             }
             else
             {
-                Manager.Instance.FruitsSpawner.StartSpawn();
+                // Manager.Instance.FruitsSpawner.StartSpawn();
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
                 Destroy(gameObject);
@@ -57,7 +41,7 @@ public class Fruit : MonoBehaviour
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
-        // rb.AddExplosionForce(_cutForce, slicedObject.transform.position, 1);
+
         if (isUpper)
         {
             rb.AddForce(75f * up);
@@ -70,8 +54,4 @@ public class Fruit : MonoBehaviour
         }
     }
 
-    public bool ShouldKillFruit()
-    {
-        return transform.position.z < Manager.Instance.GameManager.Player.position.z - 2.0f;
-    }
 }

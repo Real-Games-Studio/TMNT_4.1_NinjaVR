@@ -27,6 +27,6 @@ public class ParticlesPool : MonoBehaviour
     private IEnumerator TurnOff(ParticleSystem particle, float duration, int randNum)
     {
         yield return new WaitForSeconds(duration);
-        _particlesDictionary[$"{randNum}"].ObjectOff(particle);
+        // _particlesDictionary[$"{randNum}"].ObjectOff(particle);
     }
 }

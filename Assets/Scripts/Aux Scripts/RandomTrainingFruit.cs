@@ -13,7 +13,7 @@ public class RandomTrainingFruit : MonoBehaviour
         var fruitList = Manager.Instance.FruitsPool.Fruits;
         GameObject fruit = Instantiate(fruitList[Random.Range(0, fruitList.Length)].gameObject, transform.position, transform.rotation);
         fruit.GetComponent<Fruit>().IsTrainingFruit = true;
-        fruit.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        // fruit.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
     public void DisableText()

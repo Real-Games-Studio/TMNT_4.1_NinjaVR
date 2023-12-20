@@ -25,6 +25,7 @@ public class PoolBase<T> where T : Component
         {
             T obj = pool.Dequeue();
             obj.gameObject.SetActive(true);
+
             return obj;
         }
 
@@ -38,6 +39,7 @@ public class PoolBase<T> where T : Component
     private T CreateObject()
     {
         T newObj = Object.Instantiate(prefab, objectsParent);
+        newObj.gameObject.SetActive(true);
         return newObj;
     }
 

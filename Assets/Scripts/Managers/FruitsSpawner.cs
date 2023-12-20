@@ -5,17 +5,13 @@ using UnityEngine.Rendering;
 
 public class FruitsSpawner : MonoBehaviour
 {
+    public float initialVelocity = 10f;
+    public float launchAngle = 45f;
+    public float gravity = 9.8f;
+    public float _rotationSpeed;
+
     [Header("Spawn points")]
     [SerializeField] private Transform[] _transformSpawns;
-
-    [Header("Spawn Control")]
-    [Tooltip("Força em que a fruta é lançada")]
-    [SerializeField]
-    private float _force;
-
-    [Tooltip("Vetor da direção que a fruta vai ser projetada")]
-    [SerializeField]
-    private Vector3 _directionVector;
 
     [Tooltip("Intervalo de tempo entre o spawn das frutas")]
     [SerializeField]
@@ -30,9 +26,8 @@ public class FruitsSpawner : MonoBehaviour
     private int _countIntervalBetweenFullSpawn = 0;
 
     public bool CanSpawn { get => _canSpawn; set => _canSpawn = value; }
-    public float Force { get => _force; set => _force = value; }
 
-    public void StartSpawn()
+    public void Start()
     {
         StartCoroutine(SpawnFruits());
     }
@@ -62,15 +57,33 @@ public class FruitsSpawner : MonoBehaviour
     private void BuildFruit(Transform pos)
     {
         Transform fruit = Manager.Instance.FruitsPool.UsePool(pos);
-        Rigidbody fruitRb = fruit.GetComponent<Rigidbody>();
-        // fruit.GetComponent<Cuttable>().enabled = true;
-        fruitRb.AddForce(_directionVector * Force);
-        fruitRb.AddTorque(new Vector3(Random.rotationUniform.x, 0, Random.rotationUniform.z) * 10);
+        StartCoroutine(MoveParabolically(fruit));
+
         _countIntervalBetweenFullSpawn++;
     }
 
-    public void SpawnTrainingFruit(Transform spawnPos)
+    private IEnumerator MoveParabolically(Transform fruit)
     {
+        float totalTime = 0f;
+        float randomX = Random.Range(0f, 360f), randomY = Random.Range(0f, 360f), randomZ = Random.Range(0f, 360f);
 
+        while (totalTime < 2f)
+        {
+            float timeStep = Time.deltaTime;
+            totalTime += timeStep;
+
+            float horizontalSpeed = initialVelocity * Mathf.Cos(launchAngle * Mathf.Deg2Rad);
+            float verticalSpeed = initialVelocity * Mathf.Sin(launchAngle * Mathf.Deg2Rad) - gravity * totalTime;
+
+            Vector3 moveDirection = new Vector3(0f, verticalSpeed, -horizontalSpeed).normalized;
+            Vector3 newPosition = fruit.position + moveDirection * initialVelocity * timeStep;
+
+            fruit.position = Vector3.MoveTowards(fruit.position, newPosition, initialVelocity * timeStep);
+            fruit.Rotate(new Vector3(randomX, randomY, randomZ) * _rotationSpeed * timeStep);
+
+            yield return null;
+        }
+
+        Manager.Instance.FruitsPool.TurnOff(fruit);
     }
 }
