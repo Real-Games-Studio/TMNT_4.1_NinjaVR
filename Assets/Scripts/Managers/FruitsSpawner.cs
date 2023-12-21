@@ -24,6 +24,7 @@ public class FruitsSpawner : MonoBehaviour
 
     private bool _canSpawn = true;
     private int _countIntervalBetweenFullSpawn = 0;
+    [SerializeField] private ParticleSystem[] _smokeParticles;
 
     public bool CanSpawn { get => _canSpawn; set => _canSpawn = value; }
 
@@ -41,13 +42,18 @@ public class FruitsSpawner : MonoBehaviour
             if (_countIntervalBetweenFullSpawn == _intervalFullSpawn)
             {
                 for (int i = 0; i < Random.Range(_transformSpawns.Length - 1, _transformSpawns.Length + 1); i++)
+                {
                     BuildFruit(_transformSpawns[i]);
+                    PlaySmoke(i);
+                }
 
                 _countIntervalBetweenFullSpawn = 0;
             }
             else
             {
-                BuildFruit(_transformSpawns[Random.Range(0, _transformSpawns.Length)].transform);
+                int randNum = Random.Range(0, _transformSpawns.Length);
+                BuildFruit(_transformSpawns[randNum].transform);
+                PlaySmoke(randNum);
             }
 
             yield return new WaitForSeconds(_timeBetweenSpawn);
@@ -87,5 +93,10 @@ public class FruitsSpawner : MonoBehaviour
         yield return new WaitWhile(() => totalTime < 7f);
         Manager.Instance.FruitsPool.TurnOff(fruit);
         Debug.Log("chamei");
+    }
+
+    private void PlaySmoke(int arrayNum)
+    {
+        _smokeParticles[arrayNum].Play();
     }
 }

@@ -22,7 +22,7 @@ public class Cuttable : MonoBehaviour
                 fruit.Slice(hit.transform.gameObject, _endSlicePoint, _startSlicePoint, _velocityEstimator);
                 return;
             }
-            
+
         }
     }
 
@@ -34,6 +34,7 @@ public class Cuttable : MonoBehaviour
             {
                 Manager.Instance.FruitsPool.TurnOff(other.transform);
                 Manager.Instance.PointsManager.AddPoints();
+                Manager.Instance.SoudManager.PlayFruitSplash();
             }
             else
             {
@@ -41,6 +42,7 @@ public class Cuttable : MonoBehaviour
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
                 Destroy(other.gameObject);
+                Manager.Instance.SoudManager.PlayFruitSplash();
             }
         }
     }

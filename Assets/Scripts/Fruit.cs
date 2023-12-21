@@ -20,6 +20,7 @@ public class Fruit : MonoBehaviour
             GameObject lowerHull = hull.CreateLowerHull(target, InsideMaterial);
             SetupSliceComponent(upperHull, _startSlicePoint.position, true);
             SetupSliceComponent(lowerHull, _startSlicePoint.position, false);
+            Manager.Instance.SoudManager.PlayFruitSplash();
 
             if (!_isTrainingFruit)
             {

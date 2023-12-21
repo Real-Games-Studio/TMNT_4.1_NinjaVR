@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private SceneManagement _sceneManagement;
     [SerializeField] private PointsManager _pointsManager;
+    [SerializeField] private SoundManager _soudManager;
 
     public FruitsSpawner FruitsSpawner { get => _fruitsSpawner; set => _fruitsSpawner = value; }
     public FruitsPool FruitsPool { get => _fruitsPool; set => _fruitsPool = value; }
@@ -21,6 +22,7 @@ public class Manager : MonoBehaviour
     public GameManager GameManager { get => _gameManager; set => _gameManager = value; }
     public SceneManagement SceneManagement { get => _sceneManagement; set => _sceneManagement = value; }
     public PointsManager PointsManager { get => _pointsManager; set => _pointsManager = value; }
+    public SoundManager SoudManager { get => _soudManager; set => _soudManager = value; }
 
     private void Awake()
     {
