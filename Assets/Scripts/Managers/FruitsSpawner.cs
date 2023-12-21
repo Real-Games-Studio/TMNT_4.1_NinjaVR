@@ -92,7 +92,6 @@ public class FruitsSpawner : MonoBehaviour
 
         yield return new WaitWhile(() => totalTime < 7f);
         Manager.Instance.FruitsPool.TurnOff(fruit);
-        Debug.Log("chamei");
     }
 
     private void PlaySmoke(int arrayNum)
