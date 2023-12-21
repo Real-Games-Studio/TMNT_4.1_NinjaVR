@@ -1,6 +1,7 @@
 using UnityEngine;
 using EzySlice;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class Cuttable : MonoBehaviour
 {
@@ -21,15 +22,27 @@ public class Cuttable : MonoBehaviour
                 fruit.Slice(hit.transform.gameObject, _endSlicePoint, _startSlicePoint, _velocityEstimator);
                 return;
             }
-            if (gameObject.CompareTag("Burst"))
-            {
-                MeshDestroy meshDestroy = hit.transform.gameObject.GetComponent<MeshDestroy>();
-                meshDestroy.DestroyMesh();
-                return;
-            }
+            
         }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.CompareTag("Burst"))
+        {
+            if (!other.transform.GetComponent<Fruit>().IsTrainingFruit)
+            {
+                Manager.Instance.FruitsPool.TurnOff(other.transform);
+                Manager.Instance.PointsManager.AddPoints();
+            }
+            else
+            {
+                Manager.Instance.FruitsSpawner.StartSpawn();
+                Manager.Instance.RandomTrainingFruit.DisableText();
+                Manager.Instance.TimeController.StartTimer();
+                Destroy(other.gameObject);
+            }
+        }
+    }
 
 }

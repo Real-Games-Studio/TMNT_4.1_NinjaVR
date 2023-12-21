@@ -24,11 +24,11 @@ public class Fruit : MonoBehaviour
             if (!_isTrainingFruit)
             {
                 Manager.Instance.FruitsPool.TurnOff(transform);
-                // enabled = false;
+                Manager.Instance.PointsManager.AddPoints();
             }
             else
             {
-                // Manager.Instance.FruitsSpawner.StartSpawn();
+                Manager.Instance.FruitsSpawner.StartSpawn();
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
                 Destroy(gameObject);
@@ -39,8 +39,9 @@ public class Fruit : MonoBehaviour
     public void SetupSliceComponent(GameObject slicedObject, Vector3 up, bool isUpper)
     {
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
-        MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        collider.convex = true;
+        // MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
+        // collider.convex = true;
+        slicedObject.AddComponent<DestroyTimer>();
 
         if (isUpper)
         {

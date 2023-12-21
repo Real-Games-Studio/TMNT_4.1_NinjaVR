@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class PoolBase<T> where T : Component
 {
     private T prefab;
     private Queue<T> pool = new Queue<T>();
+    private HashSet<T> pool2 = new HashSet<T>();
     private Transform objectsParent;
 
     public PoolBase(T prefab, int initialSize, Transform objectsParentTemp = null)
@@ -39,7 +41,6 @@ public class PoolBase<T> where T : Component
     private T CreateObject()
     {
         T newObj = Object.Instantiate(prefab, objectsParent);
-        newObj.gameObject.SetActive(true);
         return newObj;
     }
 

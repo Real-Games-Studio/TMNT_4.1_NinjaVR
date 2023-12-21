@@ -14,11 +14,12 @@ public class TimeController : MonoBehaviour
 
     private void Start()
     {
-        timeTxt.text = "0:00";
+        timeTxt.text = "00:00";
     }
     public void StartTimer()
     {
         InvokeRepeating("Countdown", 0, 1);
+        Manager.Instance.GameManager.ChangeState(GameStates.Playing);
     }
 
     void Countdown()
@@ -42,7 +43,6 @@ public class TimeController : MonoBehaviour
 
     public void TriggerEndgameEvent()
     {
-        // onLevelComplete.Invoke();
-        Debug.Log("evento");
+        Manager.Instance.GameManager.EndGame();
     }
 }

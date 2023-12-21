@@ -14,7 +14,7 @@ public class FruitsPool : MonoBehaviour
     private void Awake()
     {
         for (int i = 0; i < Fruits.Length; i++)
-            _fruitsDictionary.Add($"{i}", new PoolBase<Transform>(Fruits[i], 1, transform));
+            _fruitsDictionary.Add($"{i}", new PoolBase<Transform>(Fruits[i], 0, transform));
     }
     public Transform UsePool(Transform posTransform)
     {
@@ -25,9 +25,17 @@ public class FruitsPool : MonoBehaviour
 
         return spawnedFruit;
     }
+
     public void TurnOff(Transform fruit)
     {
         FruitsDictionary[$"{_randNum}"].ObjectOff(fruit);
-        // Manager.Instance.ParticlesPool.UsePool(transform, _randNum);
+        Manager.Instance.ParticlesPool.UsePool(fruit, _randNum);
+    }
+
+    public void DisableAllFruits()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+            transform.GetChild(i).gameObject.SetActive(false);
+
     }
 }

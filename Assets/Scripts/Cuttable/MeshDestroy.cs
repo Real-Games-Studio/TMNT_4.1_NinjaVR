@@ -39,7 +39,7 @@ public class MeshDestroy : MonoBehaviour
     {
         if (_fruit.IsTrainingFruit)
         {
-            // Manager.Instance.FruitsSpawner.StartSpawn();
+            Manager.Instance.FruitsSpawner.StartSpawn();
             Manager.Instance.RandomTrainingFruit.DisableText();
             Manager.Instance.TimeController.StartTimer();
         }

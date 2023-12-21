@@ -60,7 +60,7 @@ public class HandAnimation : MonoBehaviour
 
     private void SetGripAnim(InputDevice controller)
     {
-        controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.grip, out float value);
+        controller.TryGetFeatureValue(CommonUsages.grip, out float value);
         myAnimator.SetFloat("Grip", value);
     }
 

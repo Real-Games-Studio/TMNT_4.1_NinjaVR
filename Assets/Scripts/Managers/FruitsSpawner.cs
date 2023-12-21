@@ -27,7 +27,7 @@ public class FruitsSpawner : MonoBehaviour
 
     public bool CanSpawn { get => _canSpawn; set => _canSpawn = value; }
 
-    public void Start()
+    public void StartSpawn()
     {
         StartCoroutine(SpawnFruits());
     }
@@ -67,7 +67,7 @@ public class FruitsSpawner : MonoBehaviour
         float totalTime = 0f;
         float randomX = Random.Range(0f, 360f), randomY = Random.Range(0f, 360f), randomZ = Random.Range(0f, 360f);
 
-        while (totalTime < 2f)
+        while (totalTime < 7f)
         {
             float timeStep = Time.deltaTime;
             totalTime += timeStep;
@@ -84,6 +84,8 @@ public class FruitsSpawner : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitWhile(() => totalTime < 7f);
         Manager.Instance.FruitsPool.TurnOff(fruit);
+        Debug.Log("chamei");
     }
 }
