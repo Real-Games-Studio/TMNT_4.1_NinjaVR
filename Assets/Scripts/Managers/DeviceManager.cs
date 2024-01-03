@@ -22,7 +22,13 @@ public class DeviceManager : MonoBehaviour
         {
             Manager.Instance.GameManager.PauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Manager.Instance.SceneManagement.GoToScene(0);
+        }
     }
+
 
 }
 

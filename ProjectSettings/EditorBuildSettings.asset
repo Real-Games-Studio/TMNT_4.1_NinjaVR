@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3_RaphaelScene.unity
     guid: c4c80fcbbaacc66438baafd410e969e0
+  - enabled: 1
+    path: Assets/Scenes/4_DonnieScene.unity
+    guid: 662e28770ff3baa4ea098ea4c5741420
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d22ca376a55099c4ea96a6aacf73ac05,
       type: 2}

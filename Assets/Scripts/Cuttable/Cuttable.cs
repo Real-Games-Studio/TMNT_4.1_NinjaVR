@@ -42,7 +42,7 @@ public class Cuttable : MonoBehaviour
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
                 Manager.Instance.SoudManager.PlayFruitSplash();
-                Manager.Instance.FruitsPool.TurnOff(transform);
+                Manager.Instance.FruitsPool.TurnOff(other.transform);
             }
         }
     }

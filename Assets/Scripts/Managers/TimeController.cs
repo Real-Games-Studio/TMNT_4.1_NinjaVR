@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
 {
-    [SerializeField] private int timeleft = 60;
+    [SerializeField] private int timeleft = 10;
+    [SerializeField] private int timeleftToRestart = 10;
     [SerializeField] private Text timeTxt;
     [SerializeField] FruitsSpawner spawner;
 
@@ -16,9 +17,10 @@ public class TimeController : MonoBehaviour
     {
         timeTxt.text = "00:00";
     }
+
     public void StartTimer()
     {
-        InvokeRepeating("Countdown", 0, 1);
+        InvokeRepeating(nameof(Countdown), 0, 1);
         Manager.Instance.GameManager.ChangeState(GameStates.Playing);
     }
 
@@ -40,9 +42,21 @@ public class TimeController : MonoBehaviour
             spawner.CanSpawn = false;
         }
     }
+    void CountdownToRestart()
+    {
+        if (timeleftToRestart > 0)
+        {
+            timeleftToRestart--;
+        }
+        else
+        {
+            Manager.Instance.SceneManagement.GoToScene(0);
+        }
+    }
 
     public void TriggerEndgameEvent()
     {
         Manager.Instance.GameManager.EndGame();
+        InvokeRepeating(nameof(CountdownToRestart), 0, 1);
     }
 }

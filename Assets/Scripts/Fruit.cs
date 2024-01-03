@@ -13,7 +13,7 @@ public class Fruit : MonoBehaviour
     {
         Vector3 planeNormal = Vector3.Cross(_endSlicePoint.position - _startSlicePoint.position, _velocityEstimator.GetVelocityEstimate()).normalized;
         SlicedHull hull = target.Slice(_endSlicePoint.position, planeNormal);
-
+        
         if (hull != null)
         {
             GameObject upperHull = hull.CreateUpperHull(target, InsideMaterial);
