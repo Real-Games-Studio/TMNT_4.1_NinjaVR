@@ -30,7 +30,7 @@ public class Cuttable : MonoBehaviour
     {
         if (gameObject.CompareTag("Burst"))
         {
-            if (!other.transform.GetComponent<Fruit>().IsTrainingFruit)
+            if (!other.transform.TryGetComponent<Fruit>(out Fruit fruit) && !fruit.IsTrainingFruit)
             {
                 Manager.Instance.FruitsPool.TurnOff(other.transform);
                 Manager.Instance.PointsManager.AddPoints();
@@ -41,6 +41,7 @@ public class Cuttable : MonoBehaviour
                 Manager.Instance.FruitsSpawner.StartSpawn();
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
+                fruit.IsTrainingFruit = false;
                 Manager.Instance.SoudManager.PlayFruitSplash();
                 Manager.Instance.FruitsPool.TurnOff(other.transform);
             }

@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeleft: 60
+  timeleftToRestart: 10
   timeTxt: {fileID: 0}
   spawner: {fileID: 4498649949013828535}
 --- !u!1 &4498649948297647702
@@ -511,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialVelocity: 2.5
-  launchAngle: 35
+  launchAngle: 38
   gravity: 0.5
   _rotationSpeed: 1
   _transformSpawns:

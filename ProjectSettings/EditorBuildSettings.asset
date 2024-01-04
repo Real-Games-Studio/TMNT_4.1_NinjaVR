@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4_DonnieScene.unity
     guid: 662e28770ff3baa4ea098ea4c5741420
+  - enabled: 1
+    path: Assets/Scenes/5_VideoTMNT.unity
+    guid: 13e406a8d3486364f823f99767532b65
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d22ca376a55099c4ea96a6aacf73ac05,
       type: 2}

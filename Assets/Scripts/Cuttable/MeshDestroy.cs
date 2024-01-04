@@ -42,6 +42,7 @@ public class MeshDestroy : MonoBehaviour
             Manager.Instance.FruitsSpawner.StartSpawn();
             Manager.Instance.RandomTrainingFruit.DisableText();
             Manager.Instance.TimeController.StartTimer();
+            _fruit.IsTrainingFruit = false;
         }
 
         var originalMesh = GetComponent<MeshFilter>().mesh;

@@ -5,9 +5,9 @@ using UnityEngine.Rendering;
 
 public class FruitsSpawner : MonoBehaviour
 {
-    public float initialVelocity = 10f;
-    public float launchAngle = 45f;
-    public float gravity = 9.8f;
+    public float initialVelocity;
+    public int launchAngle;
+    public float gravity;
     public float _rotationSpeed;
 
     [Header("Spawn points")]
@@ -77,9 +77,9 @@ public class FruitsSpawner : MonoBehaviour
         {
             float timeStep = Time.deltaTime;
             totalTime += timeStep;
-
-            float horizontalSpeed = initialVelocity * Mathf.Cos(launchAngle * Mathf.Deg2Rad);
-            float verticalSpeed = initialVelocity * Mathf.Sin(launchAngle * Mathf.Deg2Rad) - gravity * totalTime;
+            
+            float horizontalSpeed = initialVelocity * Mathf.Cos(Random.Range(launchAngle - 3, launchAngle + 2) * Mathf.Deg2Rad);
+            float verticalSpeed = initialVelocity * Mathf.Sin(Random.Range(launchAngle - 3, launchAngle + 2) * Mathf.Deg2Rad) - gravity * totalTime;
 
             Vector3 moveDirection = new Vector3(0f, verticalSpeed, -horizontalSpeed).normalized;
             Vector3 newPosition = fruit.position + moveDirection * initialVelocity * timeStep;

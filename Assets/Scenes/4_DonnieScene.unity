@@ -3043,41 +3043,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665438369635441622, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -3681,7 +3646,7 @@ MonoBehaviour:
   m_Camera: {fileID: 611321458}
   m_OriginBaseGameObject: {fileID: 1741391983}
   m_CameraFloorOffsetObject: {fileID: 1247035323}
-  m_RequestedTrackingOriginMode: 1
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 2
 --- !u!4 &1741391986
 Transform:

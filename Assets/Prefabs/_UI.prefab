@@ -2406,7 +2406,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665438369635441620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3084,7 +3084,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Corte a fruta para<br><size=100%>COME\xC7AR"
+  m_text: '#Start<br>Corte a Fruta!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00d3676576edfab4c863e4633707f29f, type: 2}
   m_sharedMaterial: {fileID: -27106569918010680, guid: 00d3676576edfab4c863e4633707f29f,
@@ -3457,7 +3459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "voc\xEA \xE9<br>ninja mesmo."
+  m_text: "Voc\xEA tem o<br>#TurtlePower\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f676e3977afa3748a677b8012e1633d, type: 2}
   m_sharedMaterial: {fileID: 8037868641164295213, guid: 3f676e3977afa3748a677b8012e1633d,
@@ -3485,8 +3487,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.42
+  m_fontSizeBase: 0.42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4423,7 +4425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jogo Pausado
+  m_text: Pausado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8da3327fd2eb578419f83a7325944816, type: 2}
   m_sharedMaterial: {fileID: -27106569918010680, guid: 8da3327fd2eb578419f83a7325944816,
@@ -4528,7 +4530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.36237, y: -2.3482308}
+  m_AnchoredPosition: {x: 0.36237, y: -2.332}
   m_SizeDelta: {x: 4.1968, y: 1.4638}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1427664810655336049
@@ -4559,7 +4561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "retire os \xF3culos para<br>outro ninja poder treinar!"
+  m_text: "Retire os \xF3culos<br>para o pr\xF3ximo treinar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85c96ec4726776943a0d553df2dca251, type: 2}
   m_sharedMaterial: {fileID: -607041707979145102, guid: 85c96ec4726776943a0d553df2dca251,
@@ -4597,7 +4599,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 5
+  m_characterSpacing: 2.5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5155,7 +5157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Recome\xE7ar"
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8da3327fd2eb578419f83a7325944816, type: 2}
   m_sharedMaterial: {fileID: -27106569918010680, guid: 8da3327fd2eb578419f83a7325944816,

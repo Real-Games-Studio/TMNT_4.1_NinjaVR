@@ -32,6 +32,7 @@ public class Fruit : MonoBehaviour
                 Manager.Instance.FruitsSpawner.StartSpawn();
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
+                _isTrainingFruit = false;
                 Manager.Instance.FruitsPool.TurnOff(transform);
             }
         }
