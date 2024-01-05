@@ -1,3 +1,4 @@
 {
-    "timeout": 5
+    "timeBetweenFruits": 3,
+    "finalTimeout": 15
 }

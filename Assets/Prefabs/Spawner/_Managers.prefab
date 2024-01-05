@@ -208,6 +208,7 @@ MonoBehaviour:
   _gameManager: {fileID: 8693468547984287915}
   _sceneManagement: {fileID: 59743001707872444}
   _pointsManager: {fileID: 6220469714675706285}
+  _deviceManager: {fileID: 8906182270519036384}
   _soudManager: {fileID: 4434739734229791320}
 --- !u!1 &1025564545995813993
 GameObject:
@@ -681,7 +682,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b2c181e451d655f449936fbdf6ecbd93, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -919,6 +920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c375908f4266e914b9a99dc8f94851f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHapticAction: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  rightHapticAction: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1001 &5403594868624191838
 PrefabInstance:
   m_ObjectHideFlags: 0

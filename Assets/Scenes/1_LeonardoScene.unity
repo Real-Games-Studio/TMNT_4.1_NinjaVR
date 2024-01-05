@@ -404,7 +404,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5172676f203493447a8f6c932f5ef140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teste3:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   sideController: 1
+--- !u!1 &248392453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248392454}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &248392454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248392453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.498, z: 0.872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 611321455}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291573523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2641,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 248392454}
   m_Father: {fileID: 1247035324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3073,6 +3117,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 584394453989330883, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
+        type: 3}
+      propertyPath: _spawnPos
+      value: 
+      objectReference: {fileID: 1966142619}
     - target: {fileID: 665438368248008262, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
         type: 3}
       propertyPath: m_IsActive
@@ -3222,17 +3271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760140780012265494, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: d605706e4660f794d9edc00b072b1a3c,
-        type: 3}
-    - target: {fileID: 7760140780012265494, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 182
       objectReference: {fileID: 0}
     - target: {fileID: 8882987048021491892, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
         type: 3}
@@ -3793,6 +3831,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5172676f203493447a8f6c932f5ef140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teste3:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   sideController: 0
 --- !u!114 &1855058018 stripped
 MonoBehaviour:
@@ -3931,6 +3981,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4381594147662704712, guid: b68228aab4891904b915e0b3f94aac8f,
     type: 3}
   m_PrefabInstance: {fileID: 1950276069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1966142619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 44736322679184863, guid: 32e0c425796ed1e48a7e8a2bbbf48b20,
+    type: 3}
+  m_PrefabInstance: {fileID: 930192910}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010149980 stripped
 GameObject:

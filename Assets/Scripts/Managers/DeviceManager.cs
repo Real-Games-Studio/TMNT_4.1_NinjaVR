@@ -8,10 +8,22 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.OpenXR.Input;
 
 
 public class DeviceManager : MonoBehaviour
 {
+
+    [SerializeField] UnityEngine.InputSystem.InputActionReference leftHapticAction;
+    [SerializeField] UnityEngine.InputSystem.InputActionReference rightHapticAction;
+
+    public void SendHaptics()
+    {
+        OpenXRInput.SendHapticImpulse(rightHapticAction, 1, 1, UnityEngine.InputSystem.XR.XRController.rightHand); //Right Hand Haptic Impulse
+
+
+        OpenXRInput.SendHapticImpulse(leftHapticAction, 1, 1, UnityEngine.InputSystem.XR.XRController.leftHand); //Left Hand Haptic Impulse
+    }
     private void Update()
     {
         bool isHMD = XRDevice.IsHMDMounted();

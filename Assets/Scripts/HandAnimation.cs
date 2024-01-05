@@ -10,6 +10,7 @@ enum Controller
 
 public class HandAnimation : MonoBehaviour
 {
+    [SerializeField] private UnityEngine.InputSystem.InputActionProperty teste3;
     public const float INPUT_RATE_CHANGE = 20.0f;
     private float pointBlend, thumbBlend;
     private Animator myAnimator;
@@ -28,7 +29,9 @@ public class HandAnimation : MonoBehaviour
 
     private void Update()
     {
-        UpdateAnimStates();
+        // UpdateAnimStates();
+
+        Debug.Log(teste3.action.IsPressed());
     }
 
     private void UpdateAnimStates()

@@ -960,11 +960,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4498649949013828535, guid: 39e5cc17912a41e4d909a2c942039b24,
         type: 3}
-      propertyPath: launchAngle
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4498649949013828535, guid: 39e5cc17912a41e4d909a2c942039b24,
-        type: 3}
       propertyPath: _directionVector.y
       value: 0.5
       objectReference: {fileID: 0}
@@ -3324,6 +3319,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5172676f203493447a8f6c932f5ef140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teste3:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   sideController: 1
 --- !u!1 &1055451718
 GameObject:

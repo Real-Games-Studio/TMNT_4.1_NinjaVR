@@ -20,6 +20,7 @@ public class Cuttable : MonoBehaviour
             {
                 Fruit fruit = hit.transform.gameObject.GetComponent<Fruit>();
                 fruit.Slice(hit.transform.gameObject, _endSlicePoint, _startSlicePoint, _velocityEstimator);
+                Manager.Instance.DeviceManager.SendHaptics();
                 return;
             }
 
@@ -30,7 +31,7 @@ public class Cuttable : MonoBehaviour
     {
         if (gameObject.CompareTag("Burst"))
         {
-            if (!other.transform.TryGetComponent<Fruit>(out Fruit fruit) && !fruit.IsTrainingFruit)
+            if (!other.transform.GetComponent<Fruit>().IsTrainingFruit)
             {
                 Manager.Instance.FruitsPool.TurnOff(other.transform);
                 Manager.Instance.PointsManager.AddPoints();
@@ -41,7 +42,7 @@ public class Cuttable : MonoBehaviour
                 Manager.Instance.FruitsSpawner.StartSpawn();
                 Manager.Instance.RandomTrainingFruit.DisableText();
                 Manager.Instance.TimeController.StartTimer();
-                fruit.IsTrainingFruit = false;
+                other.transform.GetComponent<Fruit>().IsTrainingFruit = false;
                 Manager.Instance.SoudManager.PlayFruitSplash();
                 Manager.Instance.FruitsPool.TurnOff(other.transform);
             }
