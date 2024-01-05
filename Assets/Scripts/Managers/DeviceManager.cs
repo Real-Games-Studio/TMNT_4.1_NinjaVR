@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 
 public class DeviceManager : MonoBehaviour
@@ -26,6 +27,10 @@ public class DeviceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             Manager.Instance.SceneManagement.GoToScene(0);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Manager.Instance.SceneManagement.GoToScene(5);
         }
     }
 

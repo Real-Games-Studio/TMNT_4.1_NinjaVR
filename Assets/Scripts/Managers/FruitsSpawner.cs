@@ -30,6 +30,7 @@ public class FruitsSpawner : MonoBehaviour
 
     public void StartSpawn()
     {
+        _timeBetweenSpawn = JSONFile.Configclass.timeBetweenFruits;
         StartCoroutine(SpawnFruits());
     }
 
@@ -77,7 +78,7 @@ public class FruitsSpawner : MonoBehaviour
         {
             float timeStep = Time.deltaTime;
             totalTime += timeStep;
-            
+
             float horizontalSpeed = initialVelocity * Mathf.Cos(Random.Range(launchAngle - 3, launchAngle + 2) * Mathf.Deg2Rad);
             float verticalSpeed = initialVelocity * Mathf.Sin(Random.Range(launchAngle - 3, launchAngle + 2) * Mathf.Deg2Rad) - gravity * totalTime;
 
